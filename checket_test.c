@@ -26,7 +26,8 @@ void unitTestChargeRate(float chRate, int isInLimit)
 
 int main()
 {
-    for (int testCaseNo = 0; testCaseNo < NO_OF_TESTCASES; ++testCaseNo)
+    int no_of_testcases = NO_OF_TESTCASES;
+    for (int testCaseNo = 0; testCaseNo < no_of_testcases; ++testCaseNo)
     {
         testBatteryStatus(testCaseNo);
     }
