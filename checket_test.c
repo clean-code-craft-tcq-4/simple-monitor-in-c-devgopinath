@@ -13,14 +13,17 @@ void testBatteryStatus(int testCaseNo)
 
 void unitTestTemperature(float temp, int isInLimit)
 {
+    printf("Unit test - Temperature %0.2f\n", temp);
     assert(IS_TEMPERATURE_IN_LIMIT(temp) == isInLimit);
 }
 void unitTestStateOfCharge(float soc, int isInLimit)
 {
+    printf("Unit test - State of charge %0.2f\n", soc);
     assert(IS_STATE_OF_CHARGE_IN_LIMIT(soc) == isInLimit);
 }
 void unitTestChargeRate(float chRate, int isInLimit)
 {
+    printf("Unit test - charge rate %0.2f\n", chRate);
     assert(IS_STATE_OF_CHARGE_IN_LIMIT(chRate) == isInLimit);
 }
 
