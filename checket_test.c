@@ -13,18 +13,15 @@ void testBatteryStatus(int testCaseNo)
 
 void unitTestTemperature(float temp, int isInLimit)
 {
-    printf("Unit test - Temperature %0.2f\n", temp);
-    assert(IS_TEMPERATURE_IN_LIMIT(temp) == isInLimit);
+    assert(IS_TEMPERATURE_NOT_IN_LIMIT(temp) == isInLimit);
 }
 void unitTestStateOfCharge(float soc, int isInLimit)
 {
-    printf("Unit test - State of charge %0.2f\n", soc);
-    assert(IS_STATE_OF_CHARGE_IN_LIMIT(soc) == isInLimit);
+    assert(IS_STATE_OF_CHARGE_NOT_IN_LIMIT(soc) == isInLimit);
 }
 void unitTestChargeRate(float chRate, int isInLimit)
 {
-    printf("Unit test - charge rate %0.2f\n", chRate);
-    assert(IS_STATE_OF_CHARGE_IN_LIMIT(chRate) == isInLimit);
+    assert(IS_STATE_OF_CHARGE_NOT_IN_LIMIT(chRate) == isInLimit);
 }
 
 int main()
@@ -34,22 +31,22 @@ int main()
         testBatteryStatus(testCaseNo);
     }
 
-    unitTestTemperature(-0.1, 0);
-    unitTestTemperature(0.0, 1);
-    unitTestTemperature(20.0, 1);
-    unitTestTemperature(45.0, 1);
-    unitTestTemperature(45.1, 0);
+    unitTestTemperature(-0.1, 1);
+    unitTestTemperature(0.0, 0);
+    unitTestTemperature(20.0, 0);
+    unitTestTemperature(45.0, 0);
+    unitTestTemperature(45.1, 1);
 
-    unitTestStateOfCharge(19.9, 0);
-    unitTestStateOfCharge(20.0, 1);
-    unitTestStateOfCharge(40.0, 1);
-    unitTestStateOfCharge(80.0, 1);
-    unitTestStateOfCharge(80.1, 0);
+    unitTestStateOfCharge(19.9, 1);
+    unitTestStateOfCharge(20.0, 0);
+    unitTestStateOfCharge(40.0, 0);
+    unitTestStateOfCharge(80.0, 0);
+    unitTestStateOfCharge(80.1, 1);
 
-    unitTestChargeRate(0.0, 1);
-    unitTestChargeRate(0.4, 1);
-    unitTestChargeRate(0.75, 1);
-    unitTestChargeRate(0.8, 1);
-    unitTestChargeRate(0.85, 0);
+    unitTestChargeRate(0.0, 0);
+    unitTestChargeRate(0.4, 0);
+    unitTestChargeRate(0.75, 0);
+    unitTestChargeRate(0.8, 0);
+    unitTestChargeRate(0.85, 1);
  
 }
