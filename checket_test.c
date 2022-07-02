@@ -3,6 +3,8 @@
 #include "checker.h"
 #include "checker_test.h"
 
+int no_of_testcases = NO_OF_TESTCASES;
+
 void testBatteryStatus(int testCaseNo)
 {
     Temperature = BatteryInputs[testCaseNo].temperature;
@@ -26,7 +28,6 @@ void unitTestChargeRate(float chRate, int isInLimit)
 
 int main()
 {
-    int no_of_testcases = NO_OF_TESTCASES;
     for (int testCaseNo = 0; testCaseNo < no_of_testcases; ++testCaseNo)
     {
         testBatteryStatus(testCaseNo);
