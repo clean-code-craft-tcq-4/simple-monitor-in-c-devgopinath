@@ -21,7 +21,7 @@ void unitTestStateOfCharge(float soc, int isInLimit)
 }
 void unitTestChargeRate(float chRate, int isInLimit)
 {
-    assert(IS_STATE_OF_CHARGE_IN_LIMIT(soc) == isInLimit);
+    assert(IS_STATE_OF_CHARGE_IN_LIMIT(chRate) == isInLimit);
 }
 
 int main()

@@ -1,5 +1,5 @@
 
-#ifdef CHECKER_H
+#ifndef CHECKER_H
 #define CHECKER_H
 
 #define TEMPERATURE_MIN 0.0

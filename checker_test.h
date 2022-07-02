@@ -1,4 +1,4 @@
-#ifdef CHECKER_TEST_H
+#ifndef CHECKER_TEST_H
 #define CHECKER_TEST_H
 
 typedef struct
