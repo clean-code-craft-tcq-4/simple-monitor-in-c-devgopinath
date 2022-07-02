@@ -1,6 +1,6 @@
 #include "checker_test.h"
 
-const BatteryAttributes BatteryInputs[] =
+const BatteryAttributes BatteryInputs[NO_OF_TESTCASES] =
 {
     // min limits
     {
