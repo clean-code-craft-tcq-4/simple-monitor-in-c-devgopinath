@@ -5,7 +5,7 @@ float Temperature;
 float StateOfCharge;
 float ChargeRate;
 
-bool IsWithinLimit(float currentValue, float min, float max)
+int IsWithinLimit(float currentValue, float min, float max)
 {
     return ((currentValue < min) || (currentValue > max));
 }

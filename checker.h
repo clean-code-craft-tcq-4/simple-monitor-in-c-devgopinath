@@ -18,7 +18,7 @@ extern float Temperature;
 extern float StateOfCharge;
 extern float ChargeRate;
 
-extern bool IsWithinLimit(float currentValue, float min, float max);
+extern int IsWithinLimit(float currentValue, float min, float max);
 extern int batteryIsOk(void);
 
 #endif
