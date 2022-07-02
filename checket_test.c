@@ -43,7 +43,8 @@ int main()
     unitTestStateOfCharge(80.0, 0);
     unitTestStateOfCharge(80.1, 1);
 
-    unitTestChargeRate(0.0, 0);
+    unitTestChargeRate(0.0, 1);
+    unitTestChargeRate(0.1, 0);
     unitTestChargeRate(0.4, 0);
     unitTestChargeRate(0.75, 0);
     unitTestChargeRate(0.8, 0);
