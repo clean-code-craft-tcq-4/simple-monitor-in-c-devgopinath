@@ -3,25 +3,42 @@
 #include "checker.h"
 #include "checker_test.h"
 
+void setTemperature(float temp)
+{
+    Temperature = temp;
+}
+void setStateOfCharge(float soc)
+{
+    StateOfCharge = soc;
+}
+void setChargeRate(float chRate)
+{
+    ChargeRate = chRate;
+}
+
 void testBatteryStatus(int testCaseNo)
 {
-    Temperature = BatteryInputs[testCaseNo].temperature;
-    StateOfCharge = BatteryInputs[testCaseNo].stateOfCharge;
-    ChargeRate = BatteryInputs[testCaseNo].chargeRate;
+    setTemperature(BatteryInputs[testCaseNo].temperature);
+    setStateOfCharge(BatteryInputs[testCaseNo].stateOfCharge);
+    setChargeRate(BatteryInputs[testCaseNo].chargeRate);
+
     assert(batteryIsOk() == BatteryInputs[testCaseNo].expectedBattStatus);
 }
 
 void unitTestTemperature(float temp, int isInLimit)
 {
-    assert(IS_TEMPERATURE_NOT_IN_LIMIT(temp) == isInLimit);
+    setTemperature(temp);
+    assert(isTemperatureOkay() == isInLimit);
 }
 void unitTestStateOfCharge(float soc, int isInLimit)
 {
-    assert(IS_STATE_OF_CHARGE_NOT_IN_LIMIT(soc) == isInLimit);
+    setStateOfCharge(soc);
+    assert(isStateOfChargeOkay() == isInLimit);
 }
 void unitTestChargeRate(float chRate, int isInLimit)
 {
-    assert(IS_CHARGE_RATE_NOT_IN_LIMIT(chRate) == isInLimit);
+    setChargeRate(chRate);
+    assert(isChargeRateOkay() == isInLimit);
 }
 
 int main()
@@ -31,23 +48,23 @@ int main()
         testBatteryStatus(testCaseNo);
     }
 
-    unitTestTemperature(-0.1, 1);
-    unitTestTemperature(0.0, 0);
-    unitTestTemperature(20.0, 0);
-    unitTestTemperature(45.0, 0);
-    unitTestTemperature(45.1, 1);
+    unitTestTemperature(-0.1, NOT_IN_LIMIT);
+    unitTestTemperature(0.0, IN_LIMIT);
+    unitTestTemperature(20.0, IN_LIMIT);
+    unitTestTemperature(45.0, IN_LIMIT);
+    unitTestTemperature(45.1, NOT_IN_LIMIT);
 
-    unitTestStateOfCharge(19.9, 1);
-    unitTestStateOfCharge(20.0, 0);
-    unitTestStateOfCharge(40.0, 0);
-    unitTestStateOfCharge(80.0, 0);
-    unitTestStateOfCharge(80.1, 1);
+    unitTestStateOfCharge(19.9, NOT_IN_LIMIT);
+    unitTestStateOfCharge(20.0, IN_LIMIT);
+    unitTestStateOfCharge(40.0, IN_LIMIT);
+    unitTestStateOfCharge(80.0, IN_LIMIT);
+    unitTestStateOfCharge(80.1, NOT_IN_LIMIT);
 
-    unitTestChargeRate(0.0, 1);
-    unitTestChargeRate(0.1, 0);
-    unitTestChargeRate(0.4, 0);
-    unitTestChargeRate(0.75, 0);
-    unitTestChargeRate(0.8, 0);
-    unitTestChargeRate(0.85, 1);
+    unitTestChargeRate(0.0, NOT_IN_LIMIT);
+    unitTestChargeRate(0.1, IN_LIMIT);
+    unitTestChargeRate(0.4, IN_LIMIT);
+    unitTestChargeRate(0.75, IN_LIMIT);
+    unitTestChargeRate(0.8, IN_LIMIT);
+    unitTestChargeRate(0.85, NOT_IN_LIMIT);
  
 }

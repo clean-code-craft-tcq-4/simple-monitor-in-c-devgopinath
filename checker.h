@@ -20,5 +20,8 @@ extern float ChargeRate;
 
 extern int IsNotWithinLimit(float currentValue, float min, float max);
 extern int batteryIsOk(void);
+int isTemperatureOkay(void);
+int isStateOfChargeOkay(void);
+int isChargeRateOkay(void);
 
 #endif
