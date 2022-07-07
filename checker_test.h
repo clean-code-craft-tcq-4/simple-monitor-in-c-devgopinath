@@ -10,9 +10,6 @@ typedef struct
 
 } BatteryAttributes;
 
-#define IN_LIMIT    1
-#define NOT_IN_LIMIT    0
-
 #define NO_OF_TESTCASES 8
 
 extern const BatteryAttributes BatteryInputs[];

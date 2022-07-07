@@ -5,44 +5,24 @@ float Temperature;
 float StateOfCharge;
 float ChargeRate;
 
-int IsNotWithinLimit(float currentValue, float min, float max)
+int IsWithinLimit(float paramValue, float min, float max, char * paramName)
 {
-    return ((currentValue < min) || (currentValue > max));
-}
-
-int isTemperatureOkay(void)
-{
-    if(IS_TEMPERATURE_NOT_IN_LIMIT(Temperature))
+    if ((paramValue < min) || (paramValue > max))
     {
-        printf("Temperature out of range!\n");
-        return 0;
+        char outMessage[50];
+        sprintf(outMessage, "%s = %0.4f, out of range!\n", paramName, paramValue);
+        printf("%s", outMessage);
+        return NOT_IN_LIMIT;
     }
-    return 1;
-}
-
-int isStateOfChargeOkay(void)
-{
-    if(IS_STATE_OF_CHARGE_NOT_IN_LIMIT(StateOfCharge))
+    else
     {
-        printf("State of Charge out of range!\n");
-        return 0;
+        return IN_LIMIT;
     }
-    return 1;
-}
-
-int isChargeRateOkay(void)
-{
-    if(IS_CHARGE_RATE_NOT_IN_LIMIT(ChargeRate))
-    {
-        printf("Charge Rate out of range!\n");
-        return 0;
-    }
-    return 1;
 }
 
 int batteryIsOk(void)
 {
-    return (isTemperatureOkay() &&
-            isStateOfChargeOkay() &&
-            isChargeRateOkay());
+    return (IS_TEMPERATURE_IN_LIMIT() &&
+            IS_STATE_OF_CHARGE_IN_LIMIT() &&
+            IS_CHARGE_RATE_IN_LIMIT());
 }

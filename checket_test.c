@@ -28,17 +28,17 @@ void testBatteryStatus(int testCaseNo)
 void unitTestTemperature(float temp, int isInLimit)
 {
     setTemperature(temp);
-    assert(isTemperatureOkay() == isInLimit);
+    assert(IS_TEMPERATURE_IN_LIMIT() == isInLimit);
 }
 void unitTestStateOfCharge(float soc, int isInLimit)
 {
     setStateOfCharge(soc);
-    assert(isStateOfChargeOkay() == isInLimit);
+    assert(IS_STATE_OF_CHARGE_IN_LIMIT() == isInLimit);
 }
 void unitTestChargeRate(float chRate, int isInLimit)
 {
     setChargeRate(chRate);
-    assert(isChargeRateOkay() == isInLimit);
+    assert(IS_CHARGE_RATE_IN_LIMIT() == isInLimit);
 }
 
 int main()
