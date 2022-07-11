@@ -42,7 +42,7 @@ typedef enum
 #define IN_LIMIT    1
 #define NOT_IN_LIMIT    0
 
-#define INLIMIT_TOLERANCE_PERCENTAGE  (float)(5/100)
+#define INLIMIT_TOLERANCE_PERCENTAGE  (5.0/100.0)
 
 extern const ParamAttributes TempParamAttributes;
 extern const ParamAttributes SocParamAttributes;
