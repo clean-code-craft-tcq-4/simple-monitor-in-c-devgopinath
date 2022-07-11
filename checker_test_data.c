@@ -1,3 +1,4 @@
+#include "checker.h"
 #include "checker_test.h"
 
 const BatteryAttributes BatteryInputs[NO_OF_TESTCASES] =

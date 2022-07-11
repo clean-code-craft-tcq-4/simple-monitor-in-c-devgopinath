@@ -49,7 +49,7 @@ void unitTestconvertFarenheitToCelcius(float temp_c, float temp_f)
 
 void unitTestgetInLimitParamLevel(float paramValue, ParamLevel level)
 {
-    assert(getInLimitParamLevel(paramValue, &TestParamAttributes), level);
+    assert(getInLimitParamLevel(paramValue, &TestParamAttributes) == level);
 }
 
 int main()
