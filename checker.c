@@ -41,7 +41,7 @@ ParamLevel getOutLimitParamLevel(float paramValue, const ParamAttributes * param
     return level;
 }
 
-static void ReportWarningMessage(ParamLevel level, const ParamAttributes * param)
+void ReportWarningMessage(ParamLevel level, const ParamAttributes * param)
 {
     char warnMessage[50];
     sprintf(outMessage, "%s parameter is in '%s' range!\n", param->paramName, WarningMessage[level]);
