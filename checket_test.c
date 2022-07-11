@@ -52,6 +52,11 @@ void unitTestgetInLimitParamLevel(float paramValue, ParamLevel level)
     assert(getInLimitParamLevel(paramValue, &TestParamAttributes) == level);
 }
 
+void unitTestgetOutLimitParamLevel(float paramValue, ParamLevel level)
+{
+    assert(getOutLimitParamLevel(paramValue, &TestParamAttributes) == level);
+}
+
 int main()
 {
     for (int testCaseNo = 0; testCaseNo < NO_OF_TESTCASES; ++testCaseNo)
@@ -82,7 +87,9 @@ int main()
     unitTestconvertFarenheitToCelcius(45.0, 113.0);
     unitTestconvertFarenheitToCelcius(20.0, 68.0);
  
-    // unitTestgetInLimitParamLevel(19.9, LOW_BREACH);
+    unitTestgetOutLimitParamLevel(19.9, LOW_BREACH);
+    unitTestgetOutLimitParamLevel(80.1, HIGH_BREACH);
+
     unitTestgetInLimitParamLevel(20.0, LOW_WARNING);
     unitTestgetInLimitParamLevel(24.0, LOW_WARNING);
     unitTestgetInLimitParamLevel(24.1, NORMAL);
@@ -90,6 +97,4 @@ int main()
     unitTestgetInLimitParamLevel(75.9, NORMAL);
     unitTestgetInLimitParamLevel(76.0, HIGH_WARNING);
     unitTestgetInLimitParamLevel(80.0, HIGH_WARNING);
-    // unitTestgetInLimitParamLevel(80.1, HIGH_BREACH);
-
 }
