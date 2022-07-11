@@ -7,7 +7,7 @@ float ChargeRate;
 
 float convertFarenheitToCelcius(float temp)
 {
-    return (temp - 32) * (5 / 9);
+    return (temp - 32.0) * (5.0 / 9.0);
 }
 
 ParamLevel getInLimitParamLevel(float paramValue, const ParamAttributes * param)

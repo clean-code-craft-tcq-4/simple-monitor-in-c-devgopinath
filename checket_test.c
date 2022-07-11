@@ -73,8 +73,8 @@ int main()
     unitTestChargeRate(0.8, IN_LIMIT);
     unitTestChargeRate(0.85, NOT_IN_LIMIT);
 
-    unitTestconvertFarenheitToCelcius(0, 32);
-    unitTestconvertFarenheitToCelcius(45, 113);
-    unitTestconvertFarenheitToCelcius(20, 68);
+    unitTestconvertFarenheitToCelcius(0.0, 32.0);
+    unitTestconvertFarenheitToCelcius(45.0, 113.0);
+    unitTestconvertFarenheitToCelcius(20.0, 68.0);
  
 }
