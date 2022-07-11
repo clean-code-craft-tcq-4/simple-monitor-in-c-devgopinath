@@ -13,5 +13,6 @@ typedef struct
 #define NO_OF_TESTCASES 8
 
 extern const BatteryAttributes BatteryInputs[];
+extern const ParamAttributes TestParamAttributes;
 
 #endif

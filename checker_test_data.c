@@ -59,3 +59,13 @@ const BatteryAttributes BatteryInputs[NO_OF_TESTCASES] =
         0  //expectedBattStatus
     }
 };
+
+#define TEST_PARAMETER_MAX 80.0
+#define TEST_PARAMETER_Min 20.0
+
+const ParamAttributes TestParamAttributes =
+{
+    "Test Parameter",
+    TEST_PARAMETER_MAX,
+    TEST_PARAMETER_MIN
+};
