@@ -2,6 +2,15 @@
 #ifndef CHECKER_H
 #define CHECKER_H
 
+typedef struct
+{
+    char * paramName;
+    float paramValue;
+    float max;
+    float min;
+    
+} ParamAttributes;
+
 #define TEMPERATURE_MIN 0.0
 #define TEMPERATURE_MAX 45.0
 #define IS_TEMPERATURE_IN_LIMIT() IsWithinLimit(Temperature, TEMPERATURE_MIN, TEMPERATURE_MAX, "Temperature")
