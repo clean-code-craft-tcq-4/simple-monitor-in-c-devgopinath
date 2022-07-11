@@ -20,3 +20,13 @@ const ParamAttributes ChRateParamAttributes =
     CHARGE_RATE_MAX,
     CHARGE_RATE_MIN
 };
+
+/* inline with ParamLevel enumeration */
+const * WarningMessage[] =
+{
+    "LOW BREACH",
+    "LOW WARNING",
+    "NORMAL",
+    "HIGH WARNING",
+    "HIGH BREACH"
+};

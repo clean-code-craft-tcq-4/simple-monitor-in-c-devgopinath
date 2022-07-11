@@ -41,20 +41,27 @@ ParamLevel getOutLimitParamLevel(float paramValue, const ParamAttributes * param
     return level;
 }
 
+void ReportWarningMessage(ParamLevel level, const ParamAttributes * param)
+{
+    char warnMessage[50];
+    sprintf(outMessage, "%s parameter is in '%s' range!\n", param->paramName, WarningMessage[level]);
+    printf("%s", warnMessage);
+    return;
+}
+
 int IsWithinLimit(float paramValue, const ParamAttributes * param)
 {
-    char outMessage[50];
-    ParamLevel level;
     if ((paramValue < param->min) || (paramValue > param->max))
     {
+        char outMessage[50];
         sprintf(outMessage, "%s = %0.4f, out of range!\n", param->paramName, paramValue);
         printf("%s", outMessage);
-        level = getOutLimitParamLevel(paramValue, param);
+        ReportWarningMessage(getOutLimitParamLevel(paramValue, param), param);
         return NOT_IN_LIMIT;
     }
     else
     {
-        level = getInLimitParamLevel(paramValue, param);
+        ReportWarningMessage(getOutLimitParamLevel(paramValue, param), param);
         return IN_LIMIT;
     }
 }
