@@ -19,9 +19,17 @@ typedef enum
     HIGH_BREACH
 } ParamLevel;
 
+//#define TEMPERATURE_IN_FARENHEIT
+
+#ifdef TEMPERATURE_IN_FARENHEIT
+#define GET_TEMPERATURE_IN_C(parameter) convertFarenheitToCelcius(parameter)
+#else
+#define GET_TEMPERATURE_IN_C(parameter) (parameter)
+#endif
+
 #define TEMPERATURE_MIN 0.0
 #define TEMPERATURE_MAX 45.0
-#define IS_TEMPERATURE_IN_LIMIT() IsWithinLimit(Temperature, &TempParamAttributes)
+#define IS_TEMPERATURE_IN_LIMIT() IsWithinLimit(GET_TEMPERATURE_IN_C(Temperature), &TempParamAttributes)
 
 #define STATE_OF_CHARGE_MIN 20.0
 #define STATE_OF_CHARGE_MAX 80.0

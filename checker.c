@@ -5,6 +5,11 @@ float Temperature;
 float StateOfCharge;
 float ChargeRate;
 
+float convertFarenheitToCelcius(float temp)
+{
+    return (temp - 32) * (5 / 9);
+}
+
 ParamLevel getInLimitParamLevel(float paramValue, const ParamAttributes * param)
 {
     float tolerance = param->max * INLIMIT_TOLERANCE_PERCENTAGE;
