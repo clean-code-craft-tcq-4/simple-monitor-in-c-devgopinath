@@ -10,6 +10,15 @@ typedef struct
     
 } ParamAttributes;
 
+typedef enum
+{
+    LOW_BREACH = 0,
+    LOW_WARNING,
+    NORMAL,
+    HIGH_WARNING,
+    HIGH_BREACH
+} ParamLevel;
+
 #define TEMPERATURE_MIN 0.0
 #define TEMPERATURE_MAX 45.0
 #define IS_TEMPERATURE_IN_LIMIT() IsWithinLimit(Temperature, &TempParamAttributes)
@@ -24,6 +33,8 @@ typedef struct
 
 #define IN_LIMIT    1
 #define NOT_IN_LIMIT    0
+
+#define INLIMIT_TOLERANCE_PERCENTAGE  (float)(5/100)
 
 extern const ParamAttributes TempParamAttributes;
 extern const ParamAttributes SocParamAttributes;
