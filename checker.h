@@ -60,4 +60,6 @@ extern ParamLevel getInLimitParamLevel(float paramValue, const ParamAttributes *
 extern ParamLevel getOutLimitParamLevel(float paramValue, const ParamAttributes * param);
 extern void ReportWarningMessage(ParamLevel level, const ParamAttributes * param);
 
+extern float convertFarenheitToCelcius(float temp);
+
 #endif

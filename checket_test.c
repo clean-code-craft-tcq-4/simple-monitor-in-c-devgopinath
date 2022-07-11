@@ -41,6 +41,12 @@ void unitTestChargeRate(float chRate, int isInLimit)
     assert(IS_CHARGE_RATE_IN_LIMIT() == isInLimit);
 }
 
+void unitTestconvertFarenheitToCelcius(float temp_c, float temp_f)
+{
+    setTemperature(temp_f);
+    assert(convertFarenheitToCelcius(temp_f) == temp_c);
+}
+
 int main()
 {
     for (int testCaseNo = 0; testCaseNo < NO_OF_TESTCASES; ++testCaseNo)
@@ -66,5 +72,9 @@ int main()
     unitTestChargeRate(0.75, IN_LIMIT);
     unitTestChargeRate(0.8, IN_LIMIT);
     unitTestChargeRate(0.85, NOT_IN_LIMIT);
+
+    unitTestconvertFarenheitToCelcius(0, 32);
+    unitTestconvertFarenheitToCelcius(45, 113);
+    unitTestconvertFarenheitToCelcius(20, 68);
  
 }
