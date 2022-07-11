@@ -39,7 +39,7 @@ typedef enum
 extern const ParamAttributes TempParamAttributes;
 extern const ParamAttributes SocParamAttributes;
 extern const ParamAttributes ChRateParamAttributes;
-extern const * WarningMessage[];
+extern const char * WarningMessage[];
 
 extern float Temperature;
 extern float StateOfCharge;
@@ -47,5 +47,9 @@ extern float ChargeRate;
 
 extern int IsWithinLimit(float paramValue, const ParamAttributes * param);
 extern int batteryIsOk(void);
+
+extern ParamLevel getInLimitParamLevel(float paramValue, const ParamAttributes * param);
+extern ParamLevel getOutLimitParamLevel(float paramValue, const ParamAttributes * param);
+extern void ReportWarningMessage(ParamLevel level, const ParamAttributes * param);
 
 #endif
