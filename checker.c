@@ -5,12 +5,12 @@ float Temperature;
 float StateOfCharge;
 float ChargeRate;
 
-int IsWithinLimit(float paramValue, float min, float max, char * paramName)
+int IsWithinLimit(float paramValue, ParamAttributes * param)
 {
-    if ((paramValue < min) || (paramValue > max))
+    if ((paramValue < param->min) || (paramValue > param->max))
     {
         char outMessage[50];
-        sprintf(outMessage, "%s = %0.4f, out of range!\n", paramName, paramValue);
+        sprintf(outMessage, "%s = %0.4f, out of range!\n", param->paramName, paramValue);
         printf("%s", outMessage);
         return NOT_IN_LIMIT;
     }
