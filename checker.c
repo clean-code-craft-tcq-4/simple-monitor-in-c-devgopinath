@@ -5,7 +5,7 @@ float Temperature;
 float StateOfCharge;
 float ChargeRate;
 
-int IsWithinLimit(float paramValue, ParamAttributes * param)
+int IsWithinLimit(float paramValue, const ParamAttributes * param)
 {
     if ((paramValue < param->min) || (paramValue > param->max))
     {

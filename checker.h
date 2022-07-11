@@ -33,7 +33,7 @@ extern float Temperature;
 extern float StateOfCharge;
 extern float ChargeRate;
 
-extern int IsWithinLimit(float paramValue, float min, float max, char * paramName);
+extern int IsWithinLimit(float paramValue, const ParamAttributes * param);
 extern int batteryIsOk(void);
 
 #endif
