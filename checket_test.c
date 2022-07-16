@@ -60,8 +60,6 @@ void unitTestgetOutLimitParamLevel(float paramValue, ParamLevel level)
 
 int main()
 {
-    printf("%d", (int)(sizeof(BatteryInputs) / sizeof(BatteryInputs[0])));
-
     for (int testCaseNo = 0; testCaseNo < NO_OF_TESTCASES; ++testCaseNo)
     {
         testBatteryStatus(testCaseNo);

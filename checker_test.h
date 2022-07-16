@@ -10,7 +10,7 @@ typedef struct
 
 } BatteryAttributes;
 
-#define NO_OF_TESTCASES 8//(sizeof(BatteryInputs) / sizeof(BatteryInputs[0]))
+#define NO_OF_TESTCASES 8
 
 extern const BatteryAttributes BatteryInputs[];
 extern const ParamAttributes TestParamAttributes;
