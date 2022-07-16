@@ -50,8 +50,8 @@ char WarningMessage[50];
 
 void ReportWarningMessage(ParamLevel level, const ParamAttributes * param)
 {
-    sprintf(WarningMessage, "'%s' is in '%s' range!\n", param->paramName, WarningLevelMessage[level]);
-    printf("%s", WarningMessage);
+    sprintf(WarningMessage, "'%s' is in '%s' range!", param->paramName, WarningLevelMessage[level]);
+    printf("%s\n", WarningMessage);
     return;
 }
 
@@ -60,8 +60,8 @@ int IsWithinLimit(float paramValue, const ParamAttributes * param)
     if ((paramValue < param->min) || (paramValue > param->max))
     {
         char outMessage[50];
-        sprintf(outMessage, "%s = %0.4f, out of range!\n", param->paramName, paramValue);
-        printf("%s", outMessage);
+        sprintf(outMessage, "%s = %0.4f, out of range!", param->paramName, paramValue);
+        printf("%s\n", outMessage);
         ReportWarningMessage(getOutLimitParamLevel(paramValue, param), param);
         return NOT_IN_LIMIT;
     }

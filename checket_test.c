@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <assert.h>
 #include "checker.h"
 #include "checker_test.h"
@@ -68,10 +69,15 @@ int main()
 
     printf("\nTemperature Tests\n");
     unitTestTemperature(-0.1, NOT_IN_LIMIT);
+    assert(strcmp(WarningMessage, "'Temperature' is in 'LOW BREACH' range!") == 0);
     unitTestTemperature(0.0, IN_LIMIT);
+    assert(strcmp(WarningMessage, "'Temperature' is in 'LOW WARNING' range!") == 0);
     unitTestTemperature(20.0, IN_LIMIT);
+    assert(strcmp(WarningMessage, "'Temperature' is in 'NORMAL' range!") == 0);
     unitTestTemperature(45.0, IN_LIMIT);
+    assert(strcmp(WarningMessage, "'Temperature' is in 'HIGH WARNING' range!") == 0);
     unitTestTemperature(45.1, NOT_IN_LIMIT);
+    assert(strcmp(WarningMessage, "'Temperature' is in 'HIGH BREACH' range!") == 0);
 
     printf("\nState of charge Tests\n");
     unitTestStateOfCharge(19.9, NOT_IN_LIMIT);
