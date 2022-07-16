@@ -60,23 +60,27 @@ void unitTestgetOutLimitParamLevel(float paramValue, ParamLevel level)
 
 int main()
 {
+    printf("\nComplete Battery Tests\n");
     for (int testCaseNo = 0; testCaseNo < NO_OF_TESTCASES; ++testCaseNo)
     {
         testBatteryStatus(testCaseNo);
     }
 
+    printf("\nTemperature Tests\n");
     unitTestTemperature(-0.1, NOT_IN_LIMIT);
     unitTestTemperature(0.0, IN_LIMIT);
     unitTestTemperature(20.0, IN_LIMIT);
     unitTestTemperature(45.0, IN_LIMIT);
     unitTestTemperature(45.1, NOT_IN_LIMIT);
 
+    printf("\nState of charge Tests\n");
     unitTestStateOfCharge(19.9, NOT_IN_LIMIT);
     unitTestStateOfCharge(20.0, IN_LIMIT);
     unitTestStateOfCharge(40.0, IN_LIMIT);
     unitTestStateOfCharge(80.0, IN_LIMIT);
     unitTestStateOfCharge(80.1, NOT_IN_LIMIT);
 
+    printf("\nCharge Rate Tests\n");
     unitTestChargeRate(0.0, NOT_IN_LIMIT);
     unitTestChargeRate(0.1, IN_LIMIT);
     unitTestChargeRate(0.4, IN_LIMIT);
@@ -84,13 +88,16 @@ int main()
     unitTestChargeRate(0.8, IN_LIMIT);
     unitTestChargeRate(0.85, NOT_IN_LIMIT);
 
+    printf("\nTemperature convertion Tests\n");
     unitTestconvertFarenheitToCelcius(0.0, 32.0);
     unitTestconvertFarenheitToCelcius(45.0, 113.0);
     unitTestconvertFarenheitToCelcius(20.0, 68.0);
  
+    printf("\nOut Limit Parameter Level Tests\n");
     unitTestgetOutLimitParamLevel(19.9, LOW_BREACH);
     unitTestgetOutLimitParamLevel(80.1, HIGH_BREACH);
 
+    printf("\nIn Limit Parameter Level Tests\n");
     unitTestgetInLimitParamLevel(20.0, LOW_WARNING);
     unitTestgetInLimitParamLevel(24.0, LOW_WARNING);
     unitTestgetInLimitParamLevel(24.1, NORMAL);

@@ -22,7 +22,7 @@ const ParamAttributes ChRateParamAttributes =
 };
 
 /* inline with ParamLevel enumeration */
-const char * WarningMessage[] =
+const char * WarningLevelMessage[] =
 {
     "LOW BREACH",
     "LOW WARNING",
