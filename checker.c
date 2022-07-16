@@ -67,7 +67,7 @@ int IsWithinLimit(float paramValue, const ParamAttributes * param)
     }
     else
     {
-        ReportWarningMessage(getOutLimitParamLevel(paramValue, param), param);
+        ReportWarningMessage(getInLimitParamLevel(paramValue, param), param);
         return IN_LIMIT;
     }
 }
