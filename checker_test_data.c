@@ -1,8 +1,6 @@
 #include "checker.h"
 #include "checker_test.h"
 
-const int No_Of_TestCases = (int)(sizeof(BatteryInputs) / sizeof(BatteryInputs[0]));
-
 const BatteryAttributes BatteryInputs[] =
 {
     // min limits
@@ -62,6 +60,8 @@ const BatteryAttributes BatteryInputs[] =
         0  //expectedBattStatus
     }
 };
+
+const int No_Of_TestCases = (int)(sizeof(BatteryInputs) / sizeof(BatteryInputs[0]));
 
 #define TEST_PARAMETER_MAX 80.0
 #define TEST_PARAMETER_MIN 20.0
